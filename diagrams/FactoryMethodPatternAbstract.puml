@@ -1,52 +1,32 @@
 @startuml
-interface AbstractFactory {
-    +createProductA(): AbstractProductA
-    +createProductB(): AbstractProductB
+interface Product {
+    +operation(): void
 }
 
-interface AbstractProductA {
-    +usefulFunctionA(): void
+class ConcreteProductA {
+    +operation(): void
 }
 
-interface AbstractProductB {
-    +usefulFunctionB(): void
+class ConcreteProductB {
+    +operation(): void
 }
 
-class ConcreteFactory1 {
-    +createProductA(): AbstractProductA
-    +createProductB(): AbstractProductB
+abstract class Creator {
+    +factoryMethod(): Product
 }
 
-class ConcreteFactory2 {
-    +createProductA(): AbstractProductA
-    +createProductB(): AbstractProductB
+class ConcreteCreatorA {
+    +factoryMethod(): Product
 }
 
-class ConcreteProductA1 {
-    +usefulFunctionA(): void
+class ConcreteCreatorB {
+    +factoryMethod(): Product
 }
 
-class ConcreteProductA2 {
-    +usefulFunctionA(): void
-}
-
-class ConcreteProductB1 {
-    +usefulFunctionB(): void
-}
-
-class ConcreteProductB2 {
-    +usefulFunctionB(): void
-}
-
-AbstractFactory <|.. ConcreteFactory1
-AbstractFactory <|.. ConcreteFactory2
-AbstractProductA <|.. ConcreteProductA1
-AbstractProductA <|.. ConcreteProductA2
-AbstractProductB <|.. ConcreteProductB1
-AbstractProductB <|.. ConcreteProductB2
-ConcreteFactory1 o--> AbstractProductA
-ConcreteFactory1 o--> AbstractProductB
-ConcreteFactory2 o--> AbstractProductA
-ConcreteFactory2 o--> AbstractProductB
+Creator <|-- ConcreteCreatorA
+Creator <|-- ConcreteCreatorB
+Product <|.. ConcreteProductA
+Product <|.. ConcreteProductB
+Creator o--> Product
 
 @enduml

@@ -11,21 +11,10 @@ class ConcreteProductB {
     +operation(): void
 }
 
-abstract class Creator {
-    +factoryMethod(): Product
-    +someOperation(): void
-}
-
-class ConcreteCreatorA {
+class Creator {
     +factoryMethod(): Product
 }
 
-class ConcreteCreatorB {
-    +factoryMethod(): Product
-}
-
-Creator <|-- ConcreteCreatorA
-Creator <|-- ConcreteCreatorB
 Product <|.. ConcreteProductA
 Product <|.. ConcreteProductB
 Creator o--> Product

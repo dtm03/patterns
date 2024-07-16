@@ -1,0 +1,14 @@
+@startuml
+interface Object {
+    +doAction(): void
+}
+
+class RealObject implements Object {
+    +doAction(): void
+}
+
+class NullObject implements Object {
+    +doAction(): void
+}
+
+@enduml

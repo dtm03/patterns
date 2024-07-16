@@ -1,33 +1,21 @@
 @startuml
 class Product {
-    +partA: String
-    +partB: String
-    +partC: String
+    -partA: String
+    -partB: String
+    -partC: String
+    +Product(builder: ProductBuilder)
 }
 
-interface Builder {
-    +buildPartA(): void
-    +buildPartB(): void
-    +buildPartC(): void
-    +getResult(): Product
+class ProductBuilder {
+    +partA(): void
+    +partB(): void
+    +partC(): void
+    +build(): Product
+    partA: String
+    partB: String
+    partC: String
 }
 
-class ConcreteBuilder {
-    +buildPartA(): void
-    +buildPartB(): void
-    +buildPartC(): void
-    +getResult(): Product
-    -product: Product
-}
-
-class Director {
-    +construct(): void
-    -builder: Builder
-    +setBuilder(builder: Builder): void
-}
-
-Builder <|.. ConcreteBuilder
-Director o-- Builder
-ConcreteBuilder o-- Product
+ProductBuilder o-- Product
 
 @enduml

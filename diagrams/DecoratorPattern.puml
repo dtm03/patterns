@@ -3,7 +3,11 @@ interface Component {
     +operation(): void
 }
 
-class ConcreteComponent {
+class ConcreteComponentA {
+    +operation(): void
+}
+
+class ConcreteComponentB {
     +operation(): void
 }
 
@@ -14,14 +18,17 @@ abstract class Decorator {
 }
 
 class ConcreteDecoratorA {
+    +ConcreteDecoratorA(component: Component)
     +operation(): void
 }
 
 class ConcreteDecoratorB {
+    +ConcreteDecoratorB(component: Component)
     +operation(): void
 }
 
-Component <|.. ConcreteComponent
+Component <|.. ConcreteComponentA
+Component <|.. ConcreteComponentB
 Component <|.. Decorator
 Decorator <|-- ConcreteDecoratorA
 Decorator <|-- ConcreteDecoratorB

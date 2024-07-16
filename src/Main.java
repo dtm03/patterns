@@ -5,20 +5,20 @@ import patterns.templateMethodPattern.TextFileProcessor;
 
 public class Main {
     public static void main(String[] args) {
-//        Game game = new GameBuilder()
-//            .homeTeam("Dallas Cowboys")
-//            .awayTeam("New York Giants")
-//            .currentYardLine(50)
-//            .stadium("AT&T Stadium")
-//            .weather("Sunny")
-//            .build();
-//        System.out.println(game);
-//        System.out.println("Game between " + game.getHomeTeam() + " and " + game.getAwayTeam() + " at " +
-//                game.getStadium() + " with " + game.getWeather() + " weather.");
+        Game game = new GameBuilder()
+            .homeTeam("Dallas Cowboys")
+            .awayTeam("New York Giants")
+            .currentYardLine(50)
+            .stadium("AT&T Stadium")
+            .weather("Sunny")
+            .build();
+        System.out.println(game);
+        System.out.println("Game between " + game.getHomeTeam() + " and " + game.getAwayTeam() + " at " +
+                game.getStadium() + " with " + game.getWeather() + " weather.");
 
-//        // Example for text file processing
-//        FileProcessor textProcessor = new TextFileProcessor();
-//        textProcessor.processFile("input.txt", "output.txt");
+        // Example for text file processing
+        FileProcessor textProcessor = new TextFileProcessor();
+        textProcessor.processFile("input.txt", "output.txt");
 
         // Create a simple Espresso
         Coffee espresso = new Espresso();
