@@ -1,0 +1,31 @@
+@startuml
+abstract class Template {
+    +templateMethod(): void
+    #operation1(): void
+    #operation2(): void
+    operation3(): void
+    operation4(): void
+}
+
+class Implementation1 {
+    #operation1(): void
+    #operation2(): void
+}
+
+class Implementation2 {
+   #operation1(): void
+   #operation2(): void
+}
+
+Template <|-- Implementation1
+Template <|-- Implementation2
+
+note right of Template::templateMethod
+  templateMethod() calls:
+  - operation1()
+  - operation2()
+  - operation3()
+  - operation4()
+end note
+
+@enduml

@@ -1,0 +1,52 @@
+@startuml
+interface AbstractFactory {
+    +createProductA(): AbstractProductA
+    +createProductB(): AbstractProductB
+}
+
+interface AbstractProductA {
+    +usefulFunctionA(): void
+}
+
+interface AbstractProductB {
+    +usefulFunctionB(): void
+}
+
+class ConcreteFactory1 {
+    +createProductA(): AbstractProductA
+    +createProductB(): AbstractProductB
+}
+
+class ConcreteFactory2 {
+    +createProductA(): AbstractProductA
+    +createProductB(): AbstractProductB
+}
+
+class ConcreteProductA1 {
+    +usefulFunctionA(): void
+}
+
+class ConcreteProductA2 {
+    +usefulFunctionA(): void
+}
+
+class ConcreteProductB1 {
+    +usefulFunctionB(): void
+}
+
+class ConcreteProductB2 {
+    +usefulFunctionB(): void
+}
+
+AbstractFactory <|.. ConcreteFactory1
+AbstractFactory <|.. ConcreteFactory2
+AbstractProductA <|.. ConcreteProductA1
+AbstractProductA <|.. ConcreteProductA2
+AbstractProductB <|.. ConcreteProductB1
+AbstractProductB <|.. ConcreteProductB2
+ConcreteFactory1 o--> AbstractProductA
+ConcreteFactory1 o--> AbstractProductB
+ConcreteFactory2 o--> AbstractProductA
+ConcreteFactory2 o--> AbstractProductB
+
+@enduml

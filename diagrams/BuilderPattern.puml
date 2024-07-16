@@ -1,0 +1,33 @@
+@startuml
+class Product {
+    +partA: String
+    +partB: String
+    +partC: String
+}
+
+interface Builder {
+    +buildPartA(): void
+    +buildPartB(): void
+    +buildPartC(): void
+    +getResult(): Product
+}
+
+class ConcreteBuilder {
+    +buildPartA(): void
+    +buildPartB(): void
+    +buildPartC(): void
+    +getResult(): Product
+    -product: Product
+}
+
+class Director {
+    +construct(): void
+    -builder: Builder
+    +setBuilder(builder: Builder): void
+}
+
+Builder <|.. ConcreteBuilder
+Director o-- Builder
+ConcreteBuilder o-- Product
+
+@enduml
