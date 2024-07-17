@@ -1,0 +1,40 @@
+@startuml
+package "MVC Pattern" {
+    interface Model {
+        +getState(): void
+        +setState(): void
+        +attach(observer: Observer): void
+        +detach(observer: Observer): void
+        +notifyObservers(): void
+    }
+
+    interface View {
+        +update(): void
+    }
+
+    interface Controller {
+        +controlAction(): void
+    }
+
+    class ConcreteModel implements Model {
+        -state: Object
+    }
+
+    class ConcreteView implements View {
+        +update(): void
+    }
+
+    class ConcreteController implements Controller {
+        -model: Model
+        -view: View
+        +controlAction(): void
+    }
+
+    Model <|.. ConcreteModel
+    View <|.. ConcreteView
+    Controller <|.. ConcreteController
+    ConcreteController -right-> Model : controls
+    ConcreteController -down-> View : updates
+    Model "1" -right-> "*" View : notifies
+}
+@enduml

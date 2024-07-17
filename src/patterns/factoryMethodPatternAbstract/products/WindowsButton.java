@@ -1,6 +1,6 @@
-package patterns.factoryMethodPatternAbstract.concreteProducts;
+package patterns.factoryMethodPatternAbstract.products;
 
-import patterns.factoryMethodPatternAbstract.productInterfaces.Button;
+import patterns.factoryMethodPatternAbstract.factories.Button;
 
 // Concrete product for Windows Button
 public class WindowsButton implements Button {

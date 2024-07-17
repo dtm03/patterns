@@ -1,6 +1,6 @@
-package patterns.factoryMethodPatternAbstract.concreteProducts;
+package patterns.factoryMethodPatternAbstract.products;
 
-import patterns.factoryMethodPatternAbstract.productInterfaces.Checkbox;
+import patterns.factoryMethodPatternAbstract.factories.Checkbox;
 
 // Concrete product for Windows Checkbox
 public class WindowsCheckbox implements Checkbox {

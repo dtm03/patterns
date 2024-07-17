@@ -1,6 +1,6 @@
-package patterns.factoryMethodPatternAbstract.concreteProducts;
+package patterns.factoryMethodPatternAbstract.products;
 
-import patterns.factoryMethodPatternAbstract.productInterfaces.Button;
+import patterns.factoryMethodPatternAbstract.factories.Button;
 
 // Concrete product for MacOS Button
 public class MacOSButton implements Button {

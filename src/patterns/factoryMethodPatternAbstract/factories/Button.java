@@ -1,4 +1,4 @@
-package patterns.factoryMethodPatternAbstract.productInterfaces;
+package patterns.factoryMethodPatternAbstract.factories;
 
 // Abstract product for Button
 public interface Button {
